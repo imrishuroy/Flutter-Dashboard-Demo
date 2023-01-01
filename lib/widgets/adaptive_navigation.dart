@@ -25,11 +25,15 @@ class AdaptiveNavigation extends StatelessWidget {
             body: Row(
               children: [
                 NavigationRail(
+                  extended: constraints.maxWidth >= 800,
+                  minExtendedWidth: 180,
+                  minWidth: 58,
                   destinations: destinations
                       .map(
                         (item) => NavigationRailDestination(
                           icon: item.icon,
                           label: Text(item.label),
+                          // padding: EdgeInsets.zero,
                         ),
                       )
                       .toList(),
